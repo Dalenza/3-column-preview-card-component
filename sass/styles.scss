@@ -1,12 +1,5 @@
-$brightOrange:hsl(31, 77%, 52%);
-$darkCyan:hsl(184, 100%, 22%);
-$veryDarkCyan:hsl(179, 100%, 13%);
-$paragraphColor:hsla(0, 0%, 100%, 0.75);
-$othersColor:hsl(0, 0%, 95%);
-$bodyFontSize:15px;
-$bigShoulderFont:'Big Shoulders Display', cursive;
-$lexendDecaFont:'Lexend Deca', sans-serif;
-
+@import "variables";
+@import "mixin";
 
 
 *{
@@ -19,20 +12,16 @@ body{
     height:100vh;
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:safe center;
     font-family:$lexendDecaFont;
+    background-color:$othersColor;
+
     .wrapper{
         width:90%;
-        max-width:1200px;
-        border:1px solid salmon;
+        max-width:1100px;
         border-radius:10px;
         color:$paragraphColor;
-        .card{
-            padding:2.5rem;
-        }
-        .card > *{
-            margin-bottom:1.75rem;
-        }
+   
         h2{
             font-family:$bigShoulderFont;
             font-size:2rem;
@@ -41,22 +30,69 @@ body{
         }
 
     }
+    .card{
+        padding:2.5rem;
+        *{
+            margin-bottom:1.75rem;
+        }
+    }
     .btn{
         display:block;
         max-width:180px;
+        min-width:120px;
         text-decoration:none;
         text-align:center;
         padding:1rem 2rem;
         border-radius:3rem;
         background-color:#fff;
+        transition:1s linear;
+        @include btn-hover-effect;
     }
     .sedans{
         background-color:$brightOrange;
+        border-top-left-radius:10px ;
+        border-top-right-radius:10px ;
+        .btn{
+            color:$brightOrange;
+        }
+        
+        
     }
+    
     .suvs{
         background-color:$darkCyan;
+        .btn{
+            color:$darkCyan;
+        }
+        
     }
     .lux{
         background-color:$veryDarkCyan;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        .btn{
+            color:$veryDarkCyan;
+        }
+        
     }
+
+}
+
+@media screen and(min-width:700px){
+    .wrapper{
+        display:flex;
+    }
+    .card{
+        flex:1 1 0;
+    }
+    .sedans{
+        border-top-right-radius:0 !important;
+        border-bottom-left-radius:10px;
+    }
+    .lux{
+        border-bottom-left-radius:0 !important;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
 }
