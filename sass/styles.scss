@@ -1,0 +1,62 @@
+$brightOrange:hsl(31, 77%, 52%);
+$darkCyan:hsl(184, 100%, 22%);
+$veryDarkCyan:hsl(179, 100%, 13%);
+$paragraphColor:hsla(0, 0%, 100%, 0.75);
+$othersColor:hsl(0, 0%, 95%);
+$bodyFontSize:15px;
+$bigShoulderFont:'Big Shoulders Display', cursive;
+$lexendDecaFont:'Lexend Deca', sans-serif;
+
+
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:$lexendDecaFont;
+    .wrapper{
+        width:90%;
+        max-width:1200px;
+        border:1px solid salmon;
+        border-radius:10px;
+        color:$paragraphColor;
+        .card{
+            padding:2.5rem;
+        }
+        .card > *{
+            margin-bottom:1.75rem;
+        }
+        h2{
+            font-family:$bigShoulderFont;
+            font-size:2rem;
+            font-weight:700;
+            color:$othersColor;
+        }
+
+    }
+    .btn{
+        display:block;
+        max-width:180px;
+        text-decoration:none;
+        text-align:center;
+        padding:1rem 2rem;
+        border-radius:3rem;
+        background-color:#fff;
+    }
+    .sedans{
+        background-color:$brightOrange;
+    }
+    .suvs{
+        background-color:$darkCyan;
+    }
+    .lux{
+        background-color:$veryDarkCyan;
+    }
+}
