@@ -1,0 +1,5 @@
+@mixin btn-hover-effect{
+    &:hover{
+        transform:rotateX(360deg);
+    }
+}
