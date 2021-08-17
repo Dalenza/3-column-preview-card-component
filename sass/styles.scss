@@ -1,5 +1,5 @@
 @import "variables";
-@import "mixin";
+
 
 
 *{
@@ -46,7 +46,6 @@ body{
         border-radius:3rem;
         background-color:#fff;
         transition:1s linear;
-        @include btn-hover-effect;
     }
     .sedans{
         background-color:$brightOrange;
@@ -54,8 +53,13 @@ body{
         border-top-right-radius:10px ;
         .btn{
             color:$brightOrange;
+            &:hover{
+                background-color:$brightOrange;
+                color:#fff;
+                border:2px solid #fff;
+            }
         }
-        
+    
         
     }
     
